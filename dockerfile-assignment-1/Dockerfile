@@ -51,9 +51,8 @@ WORKDIR /usr/src/app
 
 COPY package.json package.json
 
-RUN npm install
-
-RUN npm cache clean --forcex
+RUN npm install \
+  && npm cache clean --force
 
 COPY . .
 
